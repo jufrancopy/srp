@@ -1,0 +1,32 @@
+Tinker
+SISTEMA
+Via Tinker 
+Usuarios con el rol Administrator puedan eliminar las producto
+---------------
+->php artisan tinker
+//invocacion de la Clase
+>>>use Spatie\Permission\Models\Role;
+//Creamos rol Administrador 
+>>> $role = Role::create(['name'=>'Administrador'])
+//Invocamos la Clase Permiso 
+>>>use Spatie\Permission\Models\Permission;
+//Asignamos un Permiso a un Rol
+>>>Permission::create(['name' => 'destroy_products']);
+//Corroborar si el permiso existe para el rol en cuestion
+>>>Permission::create(['name' => 'destroy_products']);
+
+Creacion de un Usuario
+>>> $user= new App\User;
+=> App\User {#3030}
+>>> $user->name='Jose Dominguez';
+=> "Jose Dominguez"
+>>> $user->email='jose@prueba.com';
+=> "jose@prueba.com"
+>>> $user->password=Hash::make('123456');
+=> "$2y$10$Mf1GCuRvfcqkjixs9yp7cuj.pQ60LbElVQGb0g2rozSEv.Zt49HP."
+>>> $user->save();
+=> true
+>>>
+
+Me quede el Jueves 11 de abril en
+https://styde.net/roles-y-permisos-con-spatie-laravel-permission/
